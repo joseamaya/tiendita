@@ -1,5 +1,6 @@
 from django.conf.urls import patterns, url
 from django.views.generic import TemplateView
+from django.conf import settings
 
 from facturacion.views import factura, guardarFactura,BusquedaCliente,BusquedaProducto, NuevoCliente, Clientes, Productos,DetalleCliente, DetalleProducto
 
