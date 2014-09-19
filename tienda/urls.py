@@ -5,7 +5,7 @@ from django.contrib import admin
 
 admin.autodiscover()
 
-from django_project import settings
+from tienda import settings
 
 urlpatterns = patterns('',
     # Examples:
