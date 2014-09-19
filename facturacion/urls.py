@@ -18,7 +18,3 @@ urlpatterns = patterns('',
 	#url(r'^(?P<encuesta_id>\d+)/resultados/$',views.resultados, name='resultados'),
 	#url(r'^(?P<encuesta_id>\d+)/voto/$',views.voto, name='voto'),
 )
-if not settings.DEBUG:
-	urlpatterns += patterns('',
-		(r'^static/(?P.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
-		)
