@@ -3,7 +3,7 @@
 import os
 import dj_database_url
 
-DEBUG = FALSE
+DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
