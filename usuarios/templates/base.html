@@ -8,6 +8,7 @@
 	    <link href="/static/css/jquery-ui.css" rel="stylesheet" type="text/css" />
 	    <script src="/static/js/jquery.js"></script>
 	    <script src="/static/js/jquery-ui.js"></script>
+	    <script src="/static/js/bootstrap.min.js"></script>
 	</head>
 	<body>
 		<div class="container">
@@ -15,15 +16,7 @@
 				<div class="navbar-inner">
 					<div class="container">
 						<a href="#" class="brand">SISTEMA DE GESTION DE TIENDAS</a>
-						<ul class="nav pull-right">
-							<li><a href="{% url 'facturacion:factura' %}">Factura</a></li>
-							<li><a href="{% url 'facturacion:clientes' %}">Clientes</a></li>
-							<li><a href="{% url 'facturacion:productos' %}">Productos</a></li>
-							<li class="divider-vertical"></li>
-							<li><a href="{% url 'usuarios:logout' %}">Cerrar Sesion</a></li>
-						</ul>					
 					</div>
-						
 				</div>
 			</div>
 			<div class="row-fluid">
@@ -32,12 +25,21 @@
 			<div class="row-fluid">
 				<div class="span12">&nbsp;</div>
 			</div>
-			{% block main_content %}
-			{% endblock main_content %}
+			<div class="row-fluid">
+				<div class="span12">&nbsp;</div>
+			</div>
+			<div class="row-fluid">
+				<div class="span12">&nbsp;</div>
+			</div>
+			<div class="row-fluid">
+				<div class="span4">
+				</div>
+				{% block main_content %}
+				{% endblock main_content %}
+				<div class="span4">
+				</div>
+			</div>
 		</div>
-
-		{% block js %}	
-		{% endblock js %}
 
 	</body>
 </html>

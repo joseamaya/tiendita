@@ -126,6 +126,7 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
     'facturacion',
+    'usuarios',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 )
@@ -158,6 +159,11 @@ LOGGING = {
         },
     }
 }
+
+# Redirect when login is correct.
+LOGIN_REDIRECT_URL = "/facturacion"
+# Redirect when login is not correct.
+LOGIN_URL = '/'
 
 # Parse database configuration from $DATABASE_URL
 DATABASES['default'] =  dj_database_url.config()

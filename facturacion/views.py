@@ -5,6 +5,7 @@ from facturacion.forms import ClienteForm, ProductoForm
 from django.core.urlresolvers import reverse_lazy, reverse
 from django.http import HttpResponse, HttpResponseRedirect
 from django.core import serializers
+from django.contrib.auth.decorators import login_required
 import datetime
 
 from facturacion.models import Factura, DetalleFactura, Cliente, Producto, Serie
@@ -15,6 +16,7 @@ def completarSerie(s):
 		serie="0"+serie
 	return serie
 
+@login_required()
 def factura(request):
 	serie = Serie.objects.get(pk="0001")
 	serie.numerador = completarSerie(serie.numerador+1)
@@ -23,6 +25,7 @@ def factura(request):
 	context = {'serie':serie,'clientes':clientes,'productos':productos}
 	return render(request, 'facturacion/factura.html', context)
 
+@login_required()
 def guardarFactura(request):
 	try:
 		serie = Serie.objects.get(pk=request.POST['serie'])
